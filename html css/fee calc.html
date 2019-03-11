@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> Fee Calculator</h2>
+
+<!-- <p>Enter price</p> -->
+ <input  id="price" type="text" name="fname" placeholder="Original fees" value="">
+ <input  id="dscnt1" type="text" name="fname" placeholder="discount" value="">
+ <!-- <button onclick="gst();">gst</button> -->
+ <!-- <input  id="add2"type="text" name="lname" placeholder="num2" value=""> -->
+ <!-- <p id="gst1"> is the gst</p> -->
+ <br>
+ 
+ <button onclick="discountP();">after discount</button>
+ <p id="dscntP"> is the discounted price</p>
+ <button onclick="gstP();">gst</button>
+ <p id="gstP"> is the gst</p>
+<br>
+
+<button onclick="finalFeesP();">Final fees</button>
+<p id="feesP"> is the final fees</p>
+<br>
+
+
+
+<!-- input  id="dscnt2" type="text" name="fname" placeholder="Enter dsnt amount" value="">
+<br>
+ 
+ <button onclick="discountF();">after discount</button>
+ <p id="dscntF"> is the discounted price</p>
+ <button onclick="gstF();">gst</button>
+ <p id="gstF"> is the gst</p>
+<br>
+
+<button onclick="finalFeesF();">Final fees</button>
+<p id="feesF"> is the final fees</p>
+<br>
+
+
+ -->
+</body>
+<script>
+  var fees1;
+
+      // return;
+      // var fees1= (P-((D1*P)/100.0));
+        
+       //var gst1= (18*fees1/100.0);
+
+       // var D2=parseInt(document.getElementById("dscnt2").value);
+       // var fees2=fees1-D2;
+   
+       // var gst2= (18*fees2/100.0);
+
+   function gstP(){   
+document.getElementById("gstP").innerHTML=gst1;}
+
+function discountP(){
+  var P= document.getElementById("price").value;
+       var D1= document.getElementById("dscnt1").value;
+       console.log(P);
+       console.log(D1);
+  //      var fees1;
+  // console.log(P);
+  // console.log(D1);
+  //console.log('aaaaaaaaaaaaaaaa');
+   document.getElementById("dscntP").innerHTML=fees1;
+}  
+function finalFeesP(){
+       var a= gst1+fees1;
+       
+      
+   document.getElementById("feesP").innerHTML=a;
+}  
+ // var D2=parseInt(document.getElementById("dscnt2").value);
+ //       var fees2=fees1-D2;
+   
+ //       var gst2= .18*fees2;
+//        function gstF(){   
+// document.getElementById("gstF").innerHTML=gst2;}
+
+// function discountF(){
+//    document.getElementById("dscntF").innerHTML=fees2;
+// }  
+// function finalFeesF(){
+//        var a= gst2+fees2;
+       
+      
+//    document.getElementById("feesF").innerHTML=a;
+// }  
+
+
+
+</script>
+</html>

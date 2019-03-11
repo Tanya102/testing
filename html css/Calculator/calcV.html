@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>calculator</title>
+  <style type="text/css">
+  
+
+body {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0;
+   padding: 50px 12px;
+  text-align: center;
+}
+
+.calculator {
+  font-size: 28px;
+  margin: 0 auto;
+  width: 22%;
+  }
+
+
+p {
+      text-align: right;
+    width: 263px;
+    height: 52px;
+    border: 1px solid;
+    margin-left: 6px;
+    padding-bottom: -14px;
+    padding-right: 7px;
+    padding-top: 10px;
+    margin-bottom: 12px;
+}
+
+button {
+ border: 1px solid;
+    background: whitesmoke;
+    
+    cursor: pointer;
+    float: left;
+    font: inherit;
+    margin: 6px;
+    width: 59px;
+    height: 59px
+  }
+  button:hover {
+    background: gray;
+    border-color: white;
+  }
+  
+
+
+
+  
+ 
+
+  </style>
+</head>
+<body>
+
+<h1>Calculator</h1>
+
+
+<div class="calculator" >
+
+ 
+
+  <p id="inputview" value="inputview"> </p>
+  
+   <button class="cbutton" onclick="clearall()" >C</button>
+  <button onclick="input7()">7</button>
+  <button onclick="input8()">8</button>
+  <button onclick="input9()">9</button>
+  <button onclick="input10()">+</button>
+
+  <button onclick="input4()">4</button>
+  <button onclick="input5()">5</button>
+  <button onclick="input6()">6</button>
+  <button onclick="input11()">-</button>
+
+  <button onclick="input1()">1</button>
+  <button onclick="input2()">2</button>
+  <button onclick="input3()">3</button>
+  <button onclick="input12()">*</button>
+
+  <button onclick="input0()">0</button>
+ <!--  <button onclick="input13()">.</button> -->
+  <button onclick="input14()">=</button>
+  <button onclick="input15()">/</button>
+</div>
+<script>
+  var str="";
+  var clc="";
+  function clearall()
+  {
+
+ document.getElementById('inputview').innerHTML  =" ";
+ str="";
+  }
+  function input0()
+{
+ str += '0';
+ clc=str;
+ 
+ document.getElementById('inputview').innerHTML =clc;  
+}
+function input1()
+{
+ str += '1';
+ clc=str;
+ document.getElementById('inputview').innerHTML =clc;
+
+} 
+function input2()
+{str += '2';
+clc=str;
+ 
+ document.getElementById('inputview').innerHTML  = clc;
+
+}
+function input3()
+{
+ str += '3';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input4()
+{
+ str += '4';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input5()
+{
+ str += '5';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input6()
+{
+ str += '6';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input7()
+{
+ str += '7';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input8()
+{
+ str += '8';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input9()
+{
+ str += '9';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input10()
+{
+ str +='+';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input11()
+{
+ str +='-';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input12()
+{str +='*';
+ clc=str;
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+// function input13()
+// {str +='*';
+ 
+//  document.getElementById('inputview').innerHTML = '.';
+
+// }
+function input15()
+{str +='/';
+clc=str;
+ 
+ document.getElementById('inputview').innerHTML = clc;
+
+}
+function input14()
+{  
+document.getElementById('inputview').innerHTML= eval(document.getElementById('inputview').innerHTML);}
+//     var y="";
+//     var z="";
+ 
+//  // document.getElementById('inputview').innerHTML = eval( document.getElementById('inputview').innerHTML);
+//  var posA = str.indexOf("+");
+//  var posS = str.indexOf("-");
+//  var posD = str.indexOf("/");
+//  var posM = str.indexOf("*");
+
+//  if(posA>0){
+// y=parseInt(str.slice(0,posA));
+// z=parseInt(str.slice(posA+1));  // var c=y+z;
+//    document.getElementById("inputview").innerHTML= y+z;
+//    str=y+z;
+// }  
+//  if(posS>0){  
+// y=parseInt(str.slice(0,posS));
+// z=parseInt(str.slice(posS+1)); // var c=y-z;
+//    document.getElementById("inputview").innerHTML= y-z;
+//    str=y-z;
+// }
+//  if(posD>0){
+// y=parseInt(str.slice(0,posD));
+// z=parseInt(str.slice(posD+1));    // var c=y/z;
+//    document.getElementById("inputview").innerHTML= y/z;
+//    str=y/z;
+// }
+
+//   if(posM>0){
+// y=parseInt(str.slice(0,posM));
+// z=parseInt(str.slice(posM+1));
+       
+//        // var c=y*z;
+//    document.getElementById("inputview").innerHTML= y*z;
+//    str=y*z;
+
+// function input15()
+// {
+ 
+//  document.getElementById('inputview').innerHTML = '/';
+
+// }
+</script>
+</body>
+</html>

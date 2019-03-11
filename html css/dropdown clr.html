@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Coloured div</h2>
+<div id="add" style="background-color: grey; width:200px; height:200px;">
+</div>
+
+<br>
+<br>
+
+<select id="selectColor" style="width: 200px">
+	<option value="0">select Color</option>
+	<option value="1">Red</option>
+	<option value="2">Blue</option>
+	<option value="3">Black</option>
+	<option value="4">green</option>
+	
+</select>
+<button onclick="color1();">select Color</button>
+
+
+
+</body>
+<script> 
+function color1(){
+var a =parseInt(document.getElementById("selectColor").value);
+if(a==1)
+  document.getElementById("add").style.backgroundColor= "red";
+  else if(a==2)
+  document.getElementById("add").style.backgroundColor= "blue";
+else if(a==3)
+  document.getElementById("add").style.backgroundColor= "black";
+else
+  document.getElementById("add").style.backgroundColor= "green";
+
+
+
+}
+</script>
+</html>

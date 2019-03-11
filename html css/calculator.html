@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calculator</h2>
+
+<p id='large'>Enter 2 num</p>
+ <input  id="add1" type="text" name="fname" placeholder="num1" value="">
+ <input  id="add2"type="text" name="lname" placeholder="num2" value="">
+ <p id="add"></p>
+
+
+
+
+<button onclick="add();">+</button>
+
+<button onclick="Sub();">-</button>
+<button onclick="Mltply();">*</button>
+<button onclick="Div();">/</button>
+
+
+</body>
+<script> 
+
+   function add(){
+       var a=parseInt(document.getElementById("add1").value);
+
+       var b=parseInt(document.getElementById("add2").value); 
+       var c=a+b;
+   document.getElementById("add").innerHTML=c;
+}   
+// // function input(){}
+// function Add(var x, var y){
+// 	var a=parseInt(document.getElementById("add1").value);
+
+//        var b=parseInt(document.getElementById("add2").value); 
+//        var c=a+b;
+//    document.getElementById("add").innerHTML=c;}
+
+function Sub(){
+	var c;
+	
+var a=document.getElementById("add1").value;
+
+       var b=document.getElementById("add2").value;
+       
+       if(a>b) 
+       c=a-b;
+   else
+   	c=b-a;
+   document.getElementById("add").innerHTML=c;}
+
+function Mltply(){
+	var a=document.getElementById("add1").value;
+
+       var b=document.getElementById("add2").value; 
+       var c=a*b;
+   document.getElementById("add").innerHTML=c;}
+
+function Div(){
+	
+
+var a=document.getElementById("add1").value;
+
+       var b=document.getElementById("add2").value;
+       if(b!=0) 
+       var c=a/b;
+   document.getElementById("add").innerHTML=c;}
+
+</script>
+</html>

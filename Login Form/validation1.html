@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<center>FORM VALIDATION</center><br>
+</head>
+<body>
+<div class="form-control"> 
+                <span>Profile Photo:</span>
+
+                <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+                <button type="submit" onclick="img();">submit</button>
+</div>
+<br>
+
+<div>
+  <span>Full Name</span>
+<!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"> -->
+  <input id="name" type="text" placeholder=" Enter your name" value="">
+  <button type="submit" onclick="name1();">submit</button>
+</div>
+
+
+<div>
+<p>
+<span>Email/Username</span>
+<input id="email" type="text" placeholder=" Enter email" value="">
+  <button type="submit" onclick="email1();">submit</button>
+</p>
+</div>
+
+
+<div>
+<p>
+<span>Password</span>
+<input id="password" type="text" placeholder="password" value="">
+  <button type="submit" onclick="password1();">submit</button>
+</p>
+</div>
+
+
+<div class="password-msgz">
+<p class="text-left" style="text-align:left;padding-left:15px;">Your password must have:</p>
+<ul class="passwordpolicy-required">
+<li id="pwdlength">Between 9-16 characters</li>
+<li id="upperchar">Uppercase characters (A-Z)</li>
+<li id="lowerchar">Lowercase characters (a-z)</li>
+<li id="digit">Numbers (0-9)</li>
+<li id="specialchar">Special characters (~*!@$#%_+.?:,)</li>
+</ul>
+</div>
+
+
+<div>
+<p>
+<span> Confirm Password</span>
+<input id="password1" type="text" placeholder=" password" value="">
+  <button type="submit" onclick="password2();">submit</button>
+</p>
+</div>
+
+
+<div id="in_service_tax_container" class="signup-row" style="display: block;">
+<p>
+<span class="frm-label" id="label_in-servicetax-id" for="input_servicetaxid">Credit Card Number</span>
+<input class="frm-field" type="text" placeholder="e.g. 4012888888881881" id="credit" name="indian-gst-id" value="">
+<button type="submit" onclick="credit1();">submit</button>
+</p>
+</div>
+
+
+<div>
+<p>
+<span>Mobile</span>
+<input type="text" value="" placeholder="enter number" value="" id="phone">
+<button type="submit" onclick="phone1();">submit</button>
+</p>
+</div>
+<br>
+
+
+<center><button type="submit" onclick="check();">Confirm Subscription</button></center>
+
+</body>
+
+
+<script>
+
+var pswrd="";
+// var phone = document.getElementById("phone").value;
+//   var name = document.getElementById("name").value;
+//   var email = document.getElementById("email").value;
+//   var x = document.getElementById("password1").value;
+//   var value=document.getElementById("credit").value;
+
+
+ function img() {
+    var formData = new FormData();
+ 
+    var file = document.getElementById("image").files[0];
+ 
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("image").value = '';
+        return false;
+    }
+    if (file.size > 150) {
+        alert('Max Upload size is 150kB only');
+        document.getElementById("image").value = '';
+        return false;
+    }
+    return true;
+}
+
+function name1() {
+  var name = document.getElementById("name").value;
+  if (name == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  else{
+  for(var i=0;i<name.length;i++){
+  if(name[i]>='a' && name[i]<='z' || name[i]>='A' && name[i]<='Z')
+    continue;
+  
+  else{ alert("Invalid Input");
+return false
+  }
+}
+}
+}
+
+function email1() {
+   var email = document.getElementById("email").value;
+  if (email == "") {
+    alert("email must be filled out");
+    return false;
+  }
+else{
+  var pos1=email.search("@");
+  var pos2=email.search(".com");
+  if(pos1==-1|| pos2==-1|| Math.abs(pos1-pos2)==1){
+    alert("Invalid email");
+    return false;}
+}}
+
+
+function password1(){
+ pswrd=document.getElementById("password").value;
+if (pswrd == "") {
+    alert("password must be filled out");
+    return false;
+  }
+  else{
+    if(pswrd.length<9 || psswrd.length>16){
+      alert("Invalid password length");
+    return false;}
+    else{
+  var letters=/^[a-zA-Z]+$/;
+var numbers=/^[0-9]+$/;
+var char=/^[~*!@$#%_+.?:,]+$/;
+if(pswrd.search(letters)==-1 || pswrd.search(numbers)==-1|| pswrd.search(char)==-1) 
+{alert('Invalid characters');
+return false;
+}
+}}}
+
+
+function password2(){
+  var x = document.getElementById("password1").value;
+  if(x==""){
+    alert("Empty field must be filled");
+    return false;
+  }
+  
+   else if(x!=pswrd){
+    alert('Enter password again');
+return false;
+}
+
+}
+
+// function credit1(){
+//   var card = document.getElementById("credit").value;
+//   if(card.length!=16)
+//     {alert('Invalid card');
+// return false;}
+
+// else{
+//   var sum=0,num="";
+//   for(var i=card.length-2;i>=0;i-= 2){
+//     num=2*card[i];
+
+//       if(num.length>1){
+//         for(var j=0;j<num.length;j++){
+//           sum +=num[j];
+//         }
+//       }
+//       else
+//         sum += num;
+//       }
+
+//   for(var i=card.length-1;i>=0;i-= 2)
+// sum+=card[i];
+    
+  
+// if(sum%10!=0)
+//     {alert('Invalid card number');
+// return false;}
+  
+// }}
+
+function credit1() {
+   var value=document.getElementById("credit").value;
+  if(value==""){
+    alert("Card number must be filled");
+    return false;
+  }
+  // var value=document.getElementById("credit").value;
+  // accept only digits, dashes or spaces                  //4 0 1 2 8 8 8 8 8 8 8 8 1 8 8 1
+  if (/[^0-9-\s]+/.test(value))
+    {alert('Invalid card number');
+ return false;}
+ else if(value=="")
+    {alert('Invalid card number');
+ return false;}
+
+  // The Luhn Algorithm. 
+  var sum = 0, nDigit = 0, bEven = false;
+  value = value.replace(/\D/g, "");
+
+  for (var n = value.length - 1; n >= 0; n--) {
+    var cDigit = value.charAt(n),
+        nDigit = parseInt(cDigit, 10);
+
+    if (bEven) {
+      if ((nDigit *= 2) > 9) nDigit -= 9;
+    }
+
+    sum += nDigit;
+    bEven = !bEven;
+  }
+
+  if((sum % 10) != 0){
+    alert('Invalid card number');
+ return false;
+  }
+}
+
+
+function phone1(){
+  var phone = document.getElementById("phone").value;
+  if(phone==""){
+    alert("Contact number must be filled");
+    return false;
+  }
+  
+  else if(phone.length!=10)
+    {alert('Invalid number');
+return false;}
+
+}
+
+
+// function check(){
+//   if(phone=="" || name=="" || email=="" || credit=="" || pswrd=="" || x==""){
+//     alert('Empty Field not accepted');
+//     return false;
+//   }
+
+// }
+
+
+</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Dimensions of div</h2>
+
+<p>Enter width& height</p>
+ <input  id="add1" type="text" name="fname" placeholder="width" value="">
+ <input  id="add2"type="text" name="lname" placeholder="height" value="">
+ <br>
+ <div id="add" style="width:20px;height:50px; background-color: grey;"></div>
+ <br>
+ <button  onclick="div1();">change div</button>
+
+
+
+
+
+
+
+
+</body>
+<script> 
+
+   function div1(){
+       var a =parseInt(document.getElementById("add1").value);
+
+       var b =parseInt(document.getElementById("add2").value); 
+       // var c=a+b;
+   document.getElementById("add").style.width= a +"px";
+   document.getElementById("add").style.height = b +"px";
+   document.getElementById("add").style.backgroundColor= "black";
+
+
+
+}   
+// // function input(){}
+// function Add(var x, var y){
+// 	var a=parseInt(document.getElementById("add1").value);
+
+//        var b=parseInt(document.getElementById("add2").value); 
+//        var c=a+b;
+//    document.getElementById("add").innerHTML=c;}
+
+// function Sub(){
+// 	var c;
+	
+// var a=document.getElementById("add1").value;
+
+//        var b=document.getElementById("add2").value;
+       
+//        if(a>b) 
+//        c=a-b;
+//    else
+//    	c=b-a;
+//    document.getElementById("add").innerHTML=c;}
+
+// function Mltply(){
+// 	var a=document.getElementById("add1").value;
+
+//        var b=document.getElementById("add2").value; 
+//        var c=a*b;
+//    document.getElementById("add").innerHTML=c;}
+
+// function Div(){
+	
+
+// var a=document.getElementById("add1").value;
+
+//        var b=document.getElementById("add2").value;
+//        if(b!=0) 
+//        var c=a/b;
+//    document.getElementById("add").innerHTML=c;}
+
+</script>
+</html>

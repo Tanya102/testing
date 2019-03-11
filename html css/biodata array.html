@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title>Biodata</title>
+</head>
+<style>
+.button1{
+	padding: 10px;
+	 margin-top:5% !important;
+	 background-color: green; 
+	 color:white!important;
+	 margin-left:48%!important;
+	 border:1px solid green;
+      
+}
+</style>
+<body>
+
+	             <div class="signup-row">
+                     <p>
+                         <span class="text-label head1">Full Name:</span>
+                              <input id="name" class="textbox placeN" type="text"  placeholder=""value=""
+                              style="text-align: center;">
+                              
+                      </p>
+                    </div>
+
+                    <div class="signup-row">
+                     <p>
+                         <span class="text-label head1">Age:</span>
+                              <input id="age" class="textbox placeN" type="text"  placeholder=""value="" style="text-align: center;">
+                              
+                      </p>
+                    </div>
+
+                    <div class="signup-row">
+                         <p>
+                              <span class="text-label head1">Email Address</span>
+                              <input type="text"  value="" class="textbox placeE" id="email" 
+                              placeholder="" style="text-align: center;">
+                              
+                        </p>
+                    </div>
+
+                    <div class="signup-row">
+                          <p>
+                                   <span class="text-label head1">Mobile:</span>
+                                   <input type="text" value="" placeholder=""class="textbox placeM" 
+                                   id="phone" style="text-align: center;" >
+                                   
+                          </p>
+                   </div>
+                    
+                    <div class="signup-row">
+                     <p>
+                         <span class="text-label head1">Place:</span>
+                              <input id="place" class="textbox placeN" type="text"  placeholder=""value=""
+                              style="text-align: center;">
+                              
+                              
+                      </p>
+                    </div>
+
+                 <br>
+                  <button class="btn button1" onclick="details();">Submit</button>
+   <p id="arrayS" style="text-align: center;">Details:</p>
+
+<script>
+	   var data=[];
+	function details(){
+	var nme = document.getElementById("name").value;
+    var mail = document.getElementById("email").value;
+    var ag = document.getElementById("age").value;
+    var plce = document.getElementById("place").value;
+    var phne = document.getElementById("phone").value;
+
+         document.getElementById("name").value="";
+		 document.getElementById("email").value="";
+		 document.getElementById("age").value="";
+		 document.getElementById("place").value="";
+		 document.getElementById("phone").value="";
+
+    var bio = {Name:nme, 
+                Email:mail, 
+                Age:ag, 
+                Place:plce, 
+                Phone:phne,
+               };
+              for (var key in bio) {
+              	data += bio[key];
+              	data += " "	;
+              }
+              document.getElementById('arrayS').innerHTML = "Array of Object :" + data;
+		}   
+</script>
+</body>
+</html>

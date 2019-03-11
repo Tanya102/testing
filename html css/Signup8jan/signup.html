@@ -1,0 +1,241 @@
+<html>
+<head>
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body style="margin:0px;">
+
+<div class="bg">
+  <center>Sign Up Form</center><br>
+     <div class="signup-box-wrapper box1">
+          
+
+             <h4 class="head">ACCOUNT INFORMATION</h4>
+                   <div class="signup-row">
+                     <p>
+                         <span class="text-label head1">Full Name:</span>
+                              <input id="name" class="textbox placeN" type="text"  placeholder=""value="">
+                              <br>
+                              <label id="name-error" class="error"></label>
+                      </p>
+                    </div>
+                    <div class="signup-row">
+                         <p>
+                              <span class="text-label head1">Email address:</span>
+                              <input type="text"  value="" class="textbox placeE" id="email" 
+                              placeholder="">
+                              <br>
+                              <label id="email-error" class="error"></label>
+                        </p>
+                    </div>
+                    <div class="signup-row">
+                         <p class="pass-wrap">
+                              <span class="text-label head1">Password:</span>
+                              <input type="text" class="password textbox required placeP data-placeholder="" id="password" value="">
+                              <br>
+                              <label id="pswrd-error" class="error"></label>
+                         </p>
+                    
+
+                          <p class="pass-wrap" style="margin-top:15px;">
+                                  <span class="text-label head1" style="margin-left: 3%;">Confirm Password:</span>
+                                  <input type="text"  class="password textbox placeC" id="conf_password" data-placeholder="" 
+                                  value="">
+                                  <br>
+                                  <span id="Cpswrd-error" class="error"></span>
+                          </p>
+                    </div>
+
+                    <div id="in_service_tax_container" class="signup-row" style="display: block;">
+                                <p>
+                                        <span class="text-label head1" for="input_servicetaxid">GST ID:</span>
+                                        <input class="frm-field placeI" type="text" placeholder="e.g. 4012888888881881" id="credit" value="">
+                                        <br>
+                                        <label id="id-error" class="error"></label>
+                                        
+                                </p>
+                    </div>
+          
+
+
+
+              <div class="signup-box">
+                     <h4 class="head">PERSONAL INFORMATION</h4>
+
+
+                   <div class="signup-row">
+                          <p>
+                                   <span class="text-label head1">Mobile:</span>
+                                   <input type="text" value="" placeholder=""class="textbox placeM" id="phone" >
+                                   <br>
+                                   <label id="phone-error" class="error"></label>
+                          </p>
+                   </div>
+                   <div class="form-group">
+    
+                     <div class="col-sm-10 radiobutton"> 
+                               <input type="radio" class="rad-btn" id="gender1" unchecked="">
+                               <label class="inputlabl" for="male">Male</label>
+                               <input type="radio" class="rad-btn" id="gender2" unchecked="">
+                               <label class="inputlabl" for="Female">Female</label>
+                               <br>
+                               <label id="gender-error" class="error"></label>
+                     </div>
+                   </div>
+
+                   <br>
+                   <div class="form-control"> 
+                              <span class="head1">Profile Photo:</span>
+
+                                  <input id="image" class="place1" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+                
+                   </div>
+
+
+
+            </div>
+        
+          <br>
+         <br>
+
+<div>
+   <center>
+        <button class="button1" type="submit" onclick="check();">Confirm Sign Up</button>
+  </center>
+</div>
+</div>
+</div>
+
+
+<script>
+  function check()
+  {                                          
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var pswrd=document.getElementById("password").value;
+    var x = document.getElementById("conf_password").value;
+    var value=document.getElementById("credit").value;
+    var phone = document.getElementById("phone").value;
+              //validate name
+
+      document.getElementById("name-error").innerHTML='';
+      document.getElementById("email-error").innerHTML='';
+      document.getElementById("pswrd-error").innerHTML='';
+      document.getElementById("Cpswrd-error").innerHTML='';
+      document.getElementById("id-error").innerHTML='';
+      document.getElementById("phone-error").innerHTML='';
+      document.getElementById("gender-error").innerHTML='';
+    
+  if (name == "") {
+          document.getElementById("name-error").innerHTML='Please enter your name.';
+  } else{
+       for(var i=0;i<name.length;i++){
+                var str="";
+                if(name[i]>='a' && name[i]<='z' ||
+                    name[i]>='A' && name[i]<='Z'||
+                    name.match(str))
+                  continue;
+                else 
+                  document.getElementById("name-error").innerHTML='Invalid name.';
+           }
+       }
+                                             //validate email addresss
+  if (email == "") 
+          document.getElementById("email-error").innerHTML='Please enter your email.';
+  else{
+          var pos1=email.search("@");
+          var pos2=email.search(".com");
+          if(pos1==-1|| 
+             pos2==-1|| 
+             Math.abs(pos1-pos2)==1)
+                        document.getElementById("email-error").innerHTML='Invalid email.'; 
+      }
+                                              //validate password
+   if (pswrd == "") 
+          document.getElementById("pswrd-error").innerHTML='Please enter your password.';
+   else{
+          if(pswrd.length<9 || pswrd.length>16)
+              document.getElementById("pswrd-error").innerHTML='Invalid password length';
+          else{
+                 var letters=/^[a-zA-Z0-9~*!@$#%_+.?:,]+$/;
+                 // var numbers=/^[0-9]+$/;
+                 // var charac=/^[~*!@$#%_+.?:,]+$/;
+
+                 if(!pswrd.match(letters)) 
+                           document.getElementById("pswrd-error").innerHTML='Invalid characters';
+              }       
+        }
+                                    //validate confirm password
+
+    if(x=="")
+             document.getElementById("Cpswrd-error").innerHTML='Please confirm your password.';
+    else if(x!=pswrd)
+              document.getElementById("Cpswrd-error").innerHTML='Confirm your password again.';
+    
+                                //validate credit card number
+   
+    if(value=="")
+              document.getElementById("id-error").innerHTML='Please enter your ID.';
+    else if (/[^0-9-\s]+/.test(value))
+              document.getElementById("id-error").innerHTML='Invalid ID.';
+       
+            //  Luhn Algorithm to check card number validation 
+    var sum = 0, nDigit = 0, bEven = false;
+    value = value.replace(/\D/g, "");
+
+    for (var n = value.length - 1; n >= 0; n--) {
+          var cDigit = value.charAt(n),nDigit = parseInt(cDigit, 10);
+          if (bEven) { 
+               if ((nDigit *= 2) > 9) 
+                      nDigit -= 9;
+             }
+          sum += nDigit;
+          bEven = !bEven;
+        }
+    if((sum % 10) != 0)
+          document.getElementById("id-error").innerHTML='Invalid ID.';
+
+                                           //validate phone number
+ 
+    if(phone=="")
+        document.getElementById("phone-error").innerHTML='Please enter your number.';
+    else if(phone.length!=10)
+        document.getElementById("phone-error").innerHTML='Invalid contact number.';
+        
+                                           //validate user's gender 
+
+     if (!document.getElementById("gender1").checked && 
+         !document.getElementById("gender2").checked)
+            document.getElementById("gender-error").innerHTML='Please specify your gender';
+        
+  
+                                              //validate uploaded photo
+    var formData = new FormData();
+    var file = document.getElementById("image").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+
+    if (t != "jpeg" && 
+         t != "jpg" && 
+         t != "png" && 
+         t != "bmp" &&
+         t != "gif"){
+                 alert('Please select a valid image file');
+                 document.getElementById("image").value = '';
+            }
+    if (file.size > 150){
+        alert('Max Upload size is 150kB only');
+        document.getElementById("image").value = '';
+    }
+
+}
+
+
+
+</script>
+</body>
+
+</html>
+
+

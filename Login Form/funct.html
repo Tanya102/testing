@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id='headUp'>what can JavaScript do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="myFunction();">Turn on the light</button>
+
+<p id='large'>This is it</p>
+
+<button onclick="myFunction1();">Turn off the light</button>
+
+</body>
+<script> 
+function myFunction(){
+document.getElementById('large').style.fontSize='80px';}
+function myFunction1(){
+	var txt=document.getElementById('headUp').innerHTML;
+	document.getElementById('headUp').innerHTML= txt.toUpperCase();
+
+}
+</script>
+</html>

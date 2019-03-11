@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> adv Calculator</h2>
+
+<p>Enter 2 num</p>
+ <input  id="add1" type="text" name="fname" placeholder="num1" value="">
+
+ <p id="add"></p>
+
+
+
+
+<button onclick="calc();">submit</button>
+
+
+
+
+</body>
+<script> 
+  function calc(){
+    var x="";
+    var y="";
+    var z="";
+  x =document.getElementById("add1").value;
+ var posA = x.indexOf("+");
+ var posS = x.indexOf("-");
+ var posD = x.indexOf("/");
+ var posM = x.indexOf("*");
+ if(posA>0){
+y=parseInt(x.slice(0,posA));
+z=parseInt(x.slice(posA+1));  // var c=y+z;
+   document.getElementById("add").innerHTML=y+z;
+}  
+ if(posS>0){  
+y=parseInt(x.slice(0,posS));
+z=parseInt(x.slice(posS+1)); // var c=y-z;
+   document.getElementById("add").innerHTML=y-z;
+}
+ if(posD>0){
+y=parseInt(x.slice(0,posD));
+z=parseInt(x.slice(posD+1));    // var c=y/z;
+   document.getElementById("add").innerHTML=y/z;
+}
+
+  if(posM>0){
+y=parseInt(x.slice(0,posM));
+z=parseInt(x.slice(posM+1));
+       
+       // var c=y*z;
+   document.getElementById("add").innerHTML=y*z;
+}  } 
+</script>
+</html>

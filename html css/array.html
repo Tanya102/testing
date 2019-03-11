@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Array Insertion</title>
+</head>
+<style>
+.input1{
+	margin-left: 33% !important;
+	margin-top:8%!important;
+	background-color: white!important; 
+	color:black;
+	padding:10px;
+	border:1px solid green;
+    border-top-left-radius:30px!important;
+    border-bottom-left-radius:30px!important;
+    width:19%!important;
+}
+.button2{
+	padding: 10px;
+	 margin-top:2% !important;
+	 background-color: green; 
+	 color:white!important;
+	 margin-left:-1%!important;
+	 border:1px solid green;
+        border-top-right-radius:30px !important;
+        border-bottom-right-radius:30px !important;
+}
+</style>
+
+
+<body>
+	<div>
+      <input type="text" id="insert" class="input1" placeholder="Enter element you want to insert" name="" value="">
+      <button class="btn button2" onclick="insertV();">Insert</button>
+     
+  </div>
+  <br>
+  <p id="array">Array elements will be shown when you enter data</p>
+
+<script>
+	
+	var arr=[];
+	
+	function insertV(){
+
+		arr.push(parseInt(document.getElementById("insert").value));
+		 document.getElementById("array").innerHTML = arr;
+		 document.getElementById("insert").value="";
+
+	}
+</script>
+</body>
+</html>

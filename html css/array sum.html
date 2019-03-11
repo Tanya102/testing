@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>Array Sum</title>
+</head>
+<style>
+.input1{
+	margin-left: 39% !important;
+	margin-top:8%!important;
+	background-color: white!important; 
+	color:black;
+	padding:10px;
+	border:1px solid green;
+    border-top-left-radius:30px!important;
+    border-bottom-left-radius:30px!important;
+    width:19%!important;
+}
+.button2{
+	padding: 10px;
+	 margin-top:2% !important;
+	 background-color: green; 
+	 color:white!important;
+	 margin-left:-1%!important;
+	 border:1px solid green;
+        border-top-right-radius:30px !important;
+        border-bottom-right-radius:30px !important;
+}
+.button1{
+	padding: 10px;
+	 margin-top:5% !important;
+	 background-color: green; 
+	 color:white!important;
+	 margin-left:48%!important;
+	 border:1px solid green;
+      
+}
+</style>
+
+
+<body>
+	<div>
+      <input type="text" id="insert1" class="input1" placeholder="Enter elements for array1" name="" 
+      value="">
+      <button class="btn button2" onclick="insert1();">Insert</button>
+      <p id="array1" style="text-align: center;">Array1 elements will be shown when you enter data</p>
+      </div>
+    
+      <div>
+      <input type="text" id="insert2" class="input1" placeholder="Enter elements for array2" name="" 
+      value="">
+      <button class="btn button2" onclick="insert2();">Insert</button>
+      <p id="array2"style="text-align: center;">Array2 elements will be shown when you enter data</p>
+     
+  </div>
+  <br>
+ 
+   <button class="btn button1" onclick="sum();">Sum</button>
+   <p id="arrayS" style="text-align: center;">Sum of given arrays</p>
+
+
+<script>
+	var str="";
+	var arr1=[];
+	var arr2=[];
+	var arr3=[];
+	
+	function insert1(){
+		 arr1.push(parseInt(document.getElementById("insert1").value));
+		 document.getElementById("array1").innerHTML = arr1;
+		 document.getElementById("insert1").value="";
+         }
+	function insert2(){
+         arr2.push(parseInt(document.getElementById("insert2").value));
+		 document.getElementById("array2").innerHTML = arr2;
+		 document.getElementById("insert2").value="";
+         }
+	function sum(){
+		  if(arr1.length!=arr2.length){
+		  	 document.getElementById("arrayS").innerHTML='Unequal arrays, cannot add!';
+		  }else{
+		  	      for(var i=0;i<arr1.length;i++){
+		           arr3.push(arr1[i]+arr2[i]);
+		            }
+                  document.getElementById("arrayS").innerHTML = arr3;
+                  
+		        }
+		    }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Repeat image in div</h2>
+
+
+ <input  id="add1" type="text" name="fname" placeholder="Enter repeatitions" value="">
+ 
+ <br>
+ <button  onclick="div1();">submit</button>
+ <br>
+ <div id="add">
+ 	
+ </div>
+ 
+ <!-- <button  onclick="div1();">submit</button> -->
+
+
+
+
+
+
+
+
+</body>
+<script> 
+
+   function div1(){
+       var a =parseInt(document.getElementById("add1").value);
+       
+    for (var i = 0; i < a; i++) {
+        document.getElementById("add").innerHTML += "<img src='12.jpg'>";
+
+    }
+
+
+
+
+}   
+
+</script>
+</html>
