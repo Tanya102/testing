@@ -1,0 +1,26 @@
+<div id='minmax' class="myclass">Hello</div><br>
+<!-- <div id='max' class="myclass">1</div><br> -->
+<!-- <div id='myid3' class="myclass">3</div> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	
+
+	
+	$.ajax({
+		url:"sample.json",
+		type: 'post',
+		// dataType: "json" ,
+		success: function(res){
+			// console.log(res);
+			// $('#minmax').html(' '+min+' - '+max);
+
+			for (var i = 0; i < res.Location.length; i++) {
+					console.log(res.Location[i].ofc_city);
+				}	
+
+		},
+		error: function(res) {
+			console.log('heelo');
+		}
+	});	
+</script>

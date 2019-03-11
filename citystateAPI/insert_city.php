@@ -1,0 +1,19 @@
+<?php
+  $mysqli = new mysqli('localhost','root','','jsonplaces') or die(mysql_error($mysqli));
+
+$result=array();
+$row=array();
+$states=array();
+$state_name='';
+
+$arr=array();
+
+
+$result=$mysqli->query("SELECT id, name FROM states")or die($mysqli->error());
+while($row=$result->fetch_assoc()){
+  $states[]=$row;}
+
+
+    echo json_encode($states);
+   
+?>
